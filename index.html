@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alata&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+  
+  <title>Frontend Mentor | Loopstudios landing page</title>
+</head>
+<body>
+  
+  <div class="header-wrapper | text-neutral-400 fs-400 side-gap">
+    <div class="container">
+      <header class="header-flex">
+        <img class="header-logo" src="./images/logo.svg" alt="Loopstudios logo">
+        <button class="mobile-nav" aria-controls="primary-nav" aria-expanded="false">
+          <span class="sr-only">Menu</span>
+        </button>
+        <nav class="primary-nav | side-gap" id="primary-nav">
+          <ul class="primary-nav-list">
+            <li><a href="#">About</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Events</a></li>
+            <li><a href="#">Products</a></li>
+            <li><a href="#">Support</a></li>
+          </ul>
+        </nav>
+      </header>
+      <div class="sub-header">
+        <h1 class="fs-800 ff-secondary fw-regular sm-line-height uppercase">Immersive experiences that deliver</h1>
+      </div>
+    </div>
+  </div>
+
+  <section class="info stacked | fs-700 text-neutral-500 fw-regular ff-secondary block-gap side-gap">
+    <picture>
+      <source srcset="./images/desktop/image-interactive.jpg" media="(min-width: 50em)">
+      <img class="info-img" src="./images/mobile/image-interactive.jpg" alt="man with VR device">
+    </picture>
+    <div class="info-content">
+      <h2 class="sm-line-height uppercase">The leader in interactive VR</h2>
+      <p class="text-primary-400 fs-400 ff-primary">Founded in 2011, Loopstudios has been producing world-class virtual reality 
+      projects for some of the best companies around the globe. Our award-winning 
+      creations have transformed businesses through digital experiences that bind 
+      to their brand.</p>
+    </div>
+  </section>
+
+  <main class="main-content | ff-secondary fs-600 uppercase sm-line-height">
+    <div class="main-title | text-neutral-500">
+      <h2>Our creations</h2>
+    </div>
+    <button class="btn | fs-500 uppercase sm-line-height">See all</button>
+    <div class="main-grid | text-neutral-400 fs-600 sm-line-height uppercase">
+        <div class="subgrid">
+          <picture>
+            <source srcset="./images/desktop/image-deep-earth.jpg" media="(min-width: 50em)">
+            <img class="subgrid-img" src="./images/mobile/image-deep-earth.jpg" alt="planet Earth">
+          </picture>
+          <h3>Deep earth</h3>
+        </div>
+        <div class="subgrid">
+          <picture>
+            <source srcset="./images/desktop/image-night-arcade.jpg" media="(min-width: 50em)">
+            <img class="subgrid-img" src="./images/mobile/image-night-arcade.jpg" alt="night arcade">
+          </picture>
+          <h3>Night arcade</h3>
+        </div>
+        <div class="subgrid">
+          <picture>
+            <source srcset="./images/desktop/image-soccer-team.jpg" media="(min-width: 50em)">
+            <img class="subgrid-img" src="./images/mobile/image-soccer-team.jpg" alt="soccer team">
+          </picture>
+          <h3>Soccer team VR</h3>
+        </div>
+        <div class="subgrid">
+          <picture>
+            <source srcset="./images/desktop/image-grid.jpg" media="(min-width: 50em)">
+            <img class="subgrid-img" src="./images/mobile/image-grid.jpg" alt="car">
+          </picture>
+          <h3>The grid</h3>
+        </div>
+        <div class="subgrid">
+          <picture>
+            <source srcset="./images/desktop/image-from-above.jpg" media="(min-width: 50em)">
+            <img class="subgrid-img" src="./images/mobile/image-from-above.jpg" alt="race track">
+          </picture>
+          <h3>From up above VR</h3>
+        </div>
+        <div class="subgrid">
+          <picture>
+            <source srcset="./images/desktop/image-pocket-borealis.jpg" media="(min-width: 50em)">
+            <img class="subgrid-img" src="./images/mobile/image-pocket-borealis.jpg" alt="borealis">
+          </picture>
+          <h3>Pocket borealis</h3>
+        </div>
+        <div class="subgrid">
+          <picture>
+            <source srcset="./images/desktop/image-curiosity.jpg" media="(min-width: 50em)">
+            <img class="subgrid-img" src="./images/mobile/image-curiosity.jpg" alt="robot">
+          </picture>
+          <h3>The curiosity</h3>
+        </div>
+        <div class="subgrid">
+          <picture>
+            <source srcset="./images/desktop/image-fisheye.jpg" media="(min-width: 50em)">
+            <img class="subgrid-img" src="./images/mobile/image-fisheye.jpg" alt="fisheye">
+          </picture>
+          <h3>Make it fisheye</h3>
+        </div>
+    </div>
+  </main>
+
+  <footer class="bg-neutral-500 text-neutral-400 fs-400 ff-primary">
+    <div class="footer-container">
+      <div class="navigation">
+        <img src="./images/logo.svg" alt="Loopstudios logo">
+        <nav class="footer-nav">
+          <ul>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Events</a></li>
+            <li><a href="#">Products</a></li>
+            <li><a href="#">Support</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="social">
+        <ul class="social-icons">
+          <li><a href="#"><img src="./images/icon-facebook.svg" alt="facebook link"></a></li>
+          <li><a href="#"><img src="./images/icon-twitter.svg" alt="twitter link"></a></li>
+          <li><a href="#"><img src="./images/icon-pinterest.svg" alt="pinterest link"></a></li>
+          <li><a href="#"><img src="./images/icon-instagram.svg" alt="instagram link"></a></li>
+        </ul>
+        <p class="text-primary-400">© 2021 Loopstudios. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./main.js"></script>
+</body> 
+</html>
