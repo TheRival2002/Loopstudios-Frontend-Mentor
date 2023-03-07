@@ -14,14 +14,16 @@
   --fw-regular: 300;
   --fw-bigger: 400;
 
-  --ff-primary: 'Alata', sans-serif;
-  --ff-secondary: 'Josefin Sans', sans-serif;
+  --ff-primary: "Alata", sans-serif;
+  --ff-secondary: "Josefin Sans", sans-serif;
 }
 
 /*
   1. Use a more-intuitive box-sizing model.
 */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 /*
@@ -33,7 +35,8 @@
 /*
   3. Allow percentage-based heights in the application
 */
-html, body {
+html,
+body {
   height: 100%;
 }
 /*
@@ -48,20 +51,33 @@ body {
 /*
   6. Improve media defaults
 */
-img, picture, video, canvas, svg {
+img,
+picture,
+video,
+canvas,
+svg {
   display: block;
   max-width: 100%;
 }
 /*
   7. Remove built-in form typography styles
 */
-input, button, textarea, select {
+input,
+button,
+textarea,
+select {
   font: inherit;
 }
 /*
   8. Avoid text overflows
 */
-p, h1, h2, h3, h4, h5, h6 {
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   overflow-wrap: break-word;
 }
 
@@ -129,7 +145,7 @@ p, h1, h2, h3, h4, h5, h6 {
   padding: 0 !important;
   margin: -1px !important;
   overflow: hidden !important;
-  clip: rect(0,0,0,0) !important;
+  clip: rect(0, 0, 0, 0) !important;
   white-space: nowrap !important;
   border: 0 !important;
 }
@@ -176,10 +192,14 @@ body {
   font-size: var(--fs-400);
 }
 
+.subgrid {
+  cursor: pointer;
+}
+
 /* Header */
 
 .header-wrapper {
-  background: url('./images/mobile/image-hero.jpg');
+  background: url("./images/mobile/image-hero.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   width: 100%;
@@ -229,7 +249,7 @@ body {
     cursor: pointer;
     background: transparent;
     border: none;
-    background-image: url('./images/icon-hamburger.svg');
+    background-image: url("./images/icon-hamburger.svg");
     background-size: contain;
     background-repeat: no-repeat;
     width: 25px;
@@ -238,7 +258,7 @@ body {
     transition: background-image 100ms ease-in-out;
   }
   .mobile-nav[aria-expanded="true"] {
-    background-image: url('./images/icon-close.svg');
+    background-image: url("./images/icon-close.svg");
   }
 }
 
@@ -248,9 +268,15 @@ body {
   margin-top: 75px;
 }
 
+@media (max-width: 50em) {
+  .sub-header h1 {
+    font-size: clamp(2rem, 5vw + 1rem, 3.25rem);
+  }
+}
+
 @media (min-width: 50em) {
   .header-wrapper {
-    background-image: url('./images/desktop/image-hero.jpg');
+    background-image: url("./images/desktop/image-hero.jpg");
     background-size: cover;
     background-position: center center;
     width: 100%;
@@ -268,15 +294,21 @@ body {
   .primary-nav-list > * > * {
     position: relative;
   }
+  .primary-nav-list > * > *::after {
+    content: "";
+    opacity: 0;
+    transition: opacity 500ms ease;
+  }
   .primary-nav-list > * > *:hover::after,
   .primary-nav-list > * > *:focus::after {
     content: "";
     position: absolute;
-    bottom: -5px;
+    bottom: -10px;
     left: 30%;
     width: 40%;
     border-bottom: 3px solid var(--clr-neutral-400);
     border-radius: 30px;
+    opacity: 1;
   }
   .sub-header {
     max-width: 60%;
@@ -300,7 +332,7 @@ body {
   width: 100%;
 }
 
-.info-content > p{
+.info-content > p {
   margin-top: 20px;
 }
 
@@ -354,20 +386,131 @@ body {
   order: 2;
 }
 
+@media (max-width: 50em) {
+  .main-grid {
+    font-size: clamp(1rem, 3vw + 0.25rem, 1.5rem);
+  }
+}
+
 .subgrid {
+  position: relative;
   display: grid;
   grid-template-columns: 1fr;
   margin-bottom: 30px;
+  color: var(--clr-neutral-400);
+  transition: color 250ms ease-in;
 }
 
-.subgrid:hover .subgrid-img,
-.subgrid:focus .subgrid-img {
-  opacity: .3;
-}
+@media (min-width: 50em) {
+  .subgrid h3 {
+    position: relative;
+    z-index: 3;
+    transition-delay: 175ms;
+  }
 
-.subgrid:hover h3,
-.subgrid:focus h3 {
-  color: var(--clr-neutral-500);
+  .subgrid:hover,
+  .subgrid:focus {
+    color: var(--clr-neutral-500);
+  }
+
+  .subgrid::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: hsl(0 0% 100% / 0.4);
+  }
+
+  .subgrid:nth-child(1)::after {
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 250ms ease-in;
+  }
+
+  .subgrid:nth-child(2)::after {
+    transform: scale(0);
+    transition: transform 250ms ease-in;
+  }
+
+  .subgrid:nth-child(3)::after {
+    transform: scale(0);
+    transition: transform 250ms ease-in;
+  }
+
+  .subgrid:nth-child(4)::after {
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 250ms ease-in;
+  }
+
+  .subgrid:nth-child(5)::after {
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 250ms ease-in;
+  }
+
+  .subgrid:nth-child(6)::after {
+    transform: scale(0);
+    transition: transform 250ms ease-in;
+  }
+
+  .subgrid:nth-child(7)::after {
+    transform: scale(0);
+    transition: transform 250ms ease-in;
+  }
+
+  .subgrid:nth-child(8)::after {
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 250ms ease-in;
+  }
+
+  .subgrid:nth-child(1):hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+
+  .subgrid:nth-child(2):hover::after {
+    transform: scale(1);
+  }
+
+  .subgrid:nth-child(3):hover::after {
+    transform: scale(1);
+  }
+
+  .subgrid:nth-child(4):hover::after {
+    transform: scaleX(1);
+    transform-origin: right;
+  }
+
+  .subgrid:nth-child(5):hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+
+  .subgrid:nth-child(6):hover::after {
+    transform: scale(1);
+  }
+
+  .subgrid:nth-child(7):hover::after {
+    transform: scale(1);
+  }
+
+  .subgrid:nth-child(8):hover::after {
+    transform: scaleX(1);
+    transform-origin: right;
+  }
+
+  .subgrid {
+    transition: transform 250ms ease-in;
+  }
+
+  .subgrid:hover,
+  .subgrid:focus {
+    transform: scale(1.05);
+  }
 }
 
 .subgrid > * {
@@ -384,7 +527,6 @@ body {
 }
 
 .subgrid-img {
-  cursor: pointer;
   width: 100%;
   aspect-ratio: 3 / 1;
   object-fit: cover;
@@ -394,17 +536,53 @@ body {
 .btn {
   cursor: pointer;
   background-color: transparent;
+  color: var(--clr-neutral-400);
   width: fit-content;
-  padding: 10px 30px;
+  padding: 0.8125rem 2.5rem;
   margin: 0 auto 100px;
   border: 1px solid;
   border-radius: 3px;
   order: 3;
+  position: relative;
 }
 
-.btn:hover {
-  background-color: var(--clr-neutral-500);
-  color: var(--clr-neutral-400);
+@media (max-width: 50em) {
+  .btn {
+    background-color: var(--clr-neutral-400);
+    color: var(--clr-neutral-500);
+    border: 2px solid var(--clr-neutral-500);
+  }
+}
+
+@media (min-width: 50em) {
+  .btn::before {
+    content: "";
+    background-color: var(--clr-neutral-400);
+    border: 2px solid var(--clr-neutral-500);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    clip-path: polygon(0% 0%, 100% 0, 100% 50%, 100% 100%, 0% 100%);
+    transition: clip-path 0.4s cubic-bezier(0.2, 1, 0.8, 1);
+  }
+
+  .btn:hover::before {
+    content: "";
+    background-color: var(--clr-neutral-500);
+    clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%);
+  }
+
+  .btn span {
+    display: block;
+    mix-blend-mode: difference;
+    transition: transform 0.4s cubic-bezier(0.2, 1, 0.8, 1);
+  }
+
+  .btn:hover span {
+    transform: translate3d(-10px, 0, 0);
+  }
 }
 
 @media (min-width: 50em) {
@@ -418,7 +596,7 @@ body {
     order: 2;
     margin: 0;
     margin-left: auto;
-    margin-top: -85px;
+    margin-top: -92px;
     margin-bottom: 45px;
     display: inline;
   }
@@ -453,8 +631,6 @@ body {
 
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
 }
 
 .navigation {
@@ -467,6 +643,10 @@ body {
 
 .social {
   margin-bottom: 50px;
+}
+
+.social p {
+  text-align: center;
 }
 
 .social-icons {
@@ -512,6 +692,11 @@ body {
   .footer-nav > * > * {
     position: relative;
   }
+  .footer-nav ul > * > *::after {
+    content: "";
+    opacity: 0;
+    transition: opacity 500ms ease;
+  }
   .footer-nav ul > * > *:hover::after,
   .footer-nav ul > * > *:focus::after {
     content: "";
@@ -521,9 +706,15 @@ body {
     width: 40%;
     border-bottom: 3px solid var(--clr-neutral-400);
     border-radius: 30px;
+    opacity: 1;
   }
   .social-icons > * > * {
     position: relative;
+  }
+  .social-icons > * > *::after {
+    content: "";
+    opacity: 0;
+    transition: opacity 500ms ease;
   }
   .social-icons > * > *:hover::after,
   .social-icons > * > *:focus::after {
@@ -534,5 +725,6 @@ body {
     width: 90%;
     border-bottom: 3px solid var(--clr-neutral-400);
     border-radius: 30px;
+    opacity: 1;
   }
 }
