@@ -763,6 +763,10 @@ body:has([data-visible]) {
 
 /* Mouse Trailer */
 
+.trailer {
+  display: none;
+}
+
 @media (min-width: 50em) {
   .trailer {
     background-color: var(--clr-trailer);
@@ -774,6 +778,7 @@ body:has([data-visible]) {
     left: 0;
     top: 0;
     pointer-events: none;
+    display: inline-block;
 
     opacity: 0;
   }
