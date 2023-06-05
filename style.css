@@ -320,7 +320,7 @@ body:has([data-visible]) {
     transition: opacity 500ms ease;
   }
   .primary-nav-list > * > *:hover::after,
-  .primary-nav-list > * > *:focus::after {
+  .primary-nav-list > * > *:focus-visible::after {
     content: "";
     position: absolute;
     bottom: -10px;
@@ -730,7 +730,7 @@ body:has([data-visible]) {
     transition: opacity 500ms ease;
   }
   .footer-nav ul > * > *:hover::after,
-  .footer-nav ul > * > *:focus::after {
+  .footer-nav ul > * > *:focus-visible::after {
     content: "";
     position: absolute;
     bottom: -10px;
@@ -749,7 +749,7 @@ body:has([data-visible]) {
     transition: opacity 500ms ease;
   }
   .social-icons > * > *:hover::after,
-  .social-icons > * > *:focus::after {
+  .social-icons > * > *:focus-visible::after {
     content: "";
     position: absolute;
     bottom: -10px;
